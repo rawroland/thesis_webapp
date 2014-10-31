@@ -1,6 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>  
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -8,18 +11,19 @@
 </head>
 <body>
 	<h2>Add Employee</h2>
-	<form action="employees/add" method="post">
+	<c:if test="${not empty flashMessage}">
+		<div>${flashMessage}</div>
+	</c:if>
+	<form:form action="addEmployee" modelAttribute="employee">
 		<label for="givenname">First Name: </label>
-		<input id="givenname" name="givenname" type="text" required="required"><br>
+		<form:input id="givenname" path="givenname" type="text" required="required"/><br>
 		<label for="surname"> Surname: </label> 
-		<input id="surname" name="surname" type="text" required="required"> <br>
+		<form:input id="surname" path="surname" type="text" required="required"/> <br>
 		<label for="username"> Username: </label>
-		<input id="username" name="username" type="text" required="required"> <br>
+		<form:input id="username" path="username" type="text" required="required"/> <br>
 		<label for="role"> Role: </label> 
-		<select id="role" name="role" >
-			<option value="cashier">cashier</option>
-		</select> <br>
+		<form:select id="role" path="role" items="${employeeTypes}" /><br>
 		<button type="submit" name="add" value="Add Employee">Add Employee</button>
-	</form>
+	</form:form>
 </body>
 </html>
