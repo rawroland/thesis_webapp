@@ -1,0 +1,110 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 160088 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:60), pid=9292, tid=1044
+#
+# JRE version: 7.0_25-b17
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (23.25-b01 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000000219e000):  JavaThread "Unknown thread" [_thread_in_vm, id=1044, stack(0x0000000002570000,0x0000000002670000)]
+
+Stack: [0x0000000002570000,0x0000000002670000]
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x000000000219e000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=1044, stack(0x0000000002570000,0x0000000002670000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x000000013f980000 - 0x000000013f9b3000 	C:\Program Files\Java\jdk1.7.0_25\bin\java.exe
+0x0000000077380000 - 0x0000000077529000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000077260000 - 0x000000007737f000 	C:\Windows\system32\kernel32.dll
+0x000007fefc340000 - 0x000007fefc3ac000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefe360000 - 0x000007fefe43b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefdcf0000 - 0x000007fefdd8f000 	C:\Windows\system32\msvcrt.dll
+0x000007fefe080000 - 0x000007fefe09f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefe4a0000 - 0x000007fefe5cd000 	C:\Windows\system32\RPCRT4.dll
+0x0000000077160000 - 0x000000007725a000 	C:\Windows\system32\USER32.dll
+0x000007fefdc80000 - 0x000007fefdce7000 	C:\Windows\system32\GDI32.dll
+0x000007fefda10000 - 0x000007fefda1e000 	C:\Windows\system32\LPK.dll
+0x000007fefda70000 - 0x000007fefdb39000 	C:\Windows\system32\USP10.dll
+0x000007fefabb0000 - 0x000007fefada4000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_fa396087175ac9ac\COMCTL32.dll
+0x000007fefc930000 - 0x000007fefc9a1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fefe0a0000 - 0x000007fefe0ce000 	C:\Windows\system32\IMM32.DLL
+0x000007fefe250000 - 0x000007fefe359000 	C:\Windows\system32\MSCTF.dll
+0x00000000667d0000 - 0x00000000668a1000 	C:\Program Files\Java\jdk1.7.0_25\jre\bin\msvcr100.dll
+0x0000000053760000 - 0x0000000053e6f000 	C:\Program Files\Java\jdk1.7.0_25\jre\bin\server\jvm.dll
+0x000007fef8400000 - 0x000007fef8409000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefda20000 - 0x000007fefda6d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefe240000 - 0x000007fefe248000 	C:\Windows\system32\NSI.dll
+0x000007fefa330000 - 0x000007fefa36b000 	C:\Windows\system32\WINMM.dll
+0x0000000077550000 - 0x0000000077557000 	C:\Windows\system32\PSAPI.DLL
+0x0000000073f00000 - 0x0000000073f0f000 	C:\Program Files\Java\jdk1.7.0_25\jre\bin\verify.dll
+0x000000006b230000 - 0x000000006b258000 	C:\Program Files\Java\jdk1.7.0_25\jre\bin\java.dll
+0x000000006f370000 - 0x000000006f385000 	C:\Program Files\Java\jdk1.7.0_25\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M -Dclassworlds.conf=C:\maven\bin\m2.conf -Dmaven.home=C:\maven 
+java_command: org.codehaus.plexus.classworlds.launcher.Launcher jetty:run
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.7.0_25
+PATH=C:\ImageMagick-6.8.0-vc9;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Diskeeper Corporation\ExpressCache\;C:\php;C:\Program Files (x86)\Common Files\Adobe\AGL;C:\Program Files\Java\jdk1.7.0_25\bin;C:\Program Files (x86)\MiKTeX 2.9\miktex\bin\;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Java\jdk1.7.0_25\bin;C:\Program Files (x86)\SlikSvn\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Git\cmd;C:\maven\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\maven\bin
+USERNAME=Roland Awemo
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 3888676k(124764k free), swap 15552840k(4988k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (23.25-b01) for windows-amd64 JRE (1.7.0_25-b17), built on Jun 21 2013 12:58:32 by "java_re" with unknown MS VC++:1600
+
+time: Thu Oct 30 00:33:38 2014
+elapsed time: 0 seconds
+
