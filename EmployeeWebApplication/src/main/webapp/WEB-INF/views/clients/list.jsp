@@ -184,11 +184,6 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:if test="${empty clients}">
-								<tr>
-									<td>No Clients found.</td>
-								</tr>
-							</c:if>
 							<c:if test="${not empty clients}">
 								<c:forEach items="${clients}" var="client">
 									<tr>

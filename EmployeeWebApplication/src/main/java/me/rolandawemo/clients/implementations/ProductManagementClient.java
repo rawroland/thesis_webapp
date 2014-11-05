@@ -1,6 +1,5 @@
 package me.rolandawemo.clients.implementations;
 
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -12,45 +11,64 @@ import me.rolandawemo.clients.interfaces.IProductManagement;
 import me.rolandawemo.models.Product;
 import ws.services.ProductManagementService;
 
-public class ProductManagementClient implements IProductManagement{
+public class ProductManagementClient implements IProductManagement {
 
 	public static final String SERVICE_LOCATION = "http://localhost:9001/dm/products?wsdl";
 	public static final String NAMESPACE_URI = "http://ws/";
 	public static final String NAMESPACE_PORT = "DMProductManagementPort";
-	
-	public static final QName SERVICE_NAME = new QName(NAMESPACE_URI,"DMProductManagementService");
+
+	public static final QName SERVICE_NAME = new QName(NAMESPACE_URI,
+			"DMProductManagementService");
 	private Service service;
-	private ProductManagementService client;
-	
 	public ProductManagementClient() {
-		try {
-			service = Service.create(new URL(SERVICE_LOCATION), SERVICE_NAME);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-		client = service.getPort(ProductManagementService.class);
+		super();
+	}
+
+	public ProductManagementService connect() throws MalformedURLException {
+		service = Service.create(new URL(SERVICE_LOCATION), SERVICE_NAME);
+		return service.getPort(ProductManagementService.class);
 	}
 
 	@Override
 	public boolean add(String name, int price, int clientId) {
-		return this.client.addProduct(name, clientId, price);
+		try {
+			return this.connect().addProduct(name, clientId, price);
+		} catch (MalformedURLException e) {
+			// TODO  LOG
+			return false;
+		}
 	}
 
 	@Override
 	public ArrayList<Product> list() {
-		return this.client.searchProducts(null);
+		try {
+			return this.connect().searchProducts(null);
+		} catch (MalformedURLException e) {
+			// TODO  LOG
+			return new ArrayList<Product>();
+		}
 	}
 
 	@Override
 	public ArrayList<Product> searchProducts(String name) {
-		return this.client.searchProducts(name);
+		try {
+			return this.connect().searchProducts(name);
+		} catch (MalformedURLException e) {
+			// TODO  LOG
+			return new ArrayList<Product>();
+		}
 	}
 
 	@Override
 	public boolean checkProduct(int id, int amount) {
-		int available = this.client.checkProduct(id);
+		int available = 0;
+		try {
+			available = this.connect().checkProduct(id);
+		} catch (MalformedURLException e) {
+			// TODO  LOG
+			return false;
+		}
 		return amount < available;
 	}
-	
-	
+
 }

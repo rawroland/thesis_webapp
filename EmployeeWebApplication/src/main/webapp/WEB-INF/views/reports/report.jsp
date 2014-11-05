@@ -166,11 +166,6 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:if test="${empty transactions}">
-									<tr>
-										<td>No transactions found.</td>
-									</tr>
-								</c:if>
 								<c:if test="${not empty transactions}">
 									<c:forEach items="${transactions}" var="transaction">
 										<tr>

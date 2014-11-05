@@ -167,11 +167,6 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:if test="${empty products}">
-									<tr>
-										<td>No products found.</td>
-									</tr>
-								</c:if>
 								<c:if test="${not empty products}">
 									<c:forEach items="${products}" var="product">
 										<tr>
