@@ -81,7 +81,7 @@ public class AccountsController {
 		Account account = new Account();
 		account.setId(client.getAccount().getId());
 		account.setClientId(client.getId());
-		account.setAmmount(0);
+		account.setAmount(0);
 		model.addAttribute("account", account);
 		model.addAttribute("flashMessage", flashMessage);
 		model.addAttribute("flashClass", flashClass);
@@ -92,7 +92,7 @@ public class AccountsController {
 	public String creditAccount(@ModelAttribute Account account, Model model,
 			RedirectAttributes attributes) {
 		if (this.accountClient.credit(account.getClientId(),
-				account.getAmmount())) {
+				account.getAmount())) {
 			attributes.addFlashAttribute("flashMessage",
 					"Account was successfully credited.");
 			attributes.addFlashAttribute("flashClass", "alert-success");
@@ -116,7 +116,7 @@ public class AccountsController {
 		Account account = new Account();
 		account.setId(client.getAccount().getId());
 		account.setClientId(client.getId());
-		account.setAmmount(0);
+		account.setAmount(0);
 		model.addAttribute("account", account);
 		model.addAttribute("flashMessage", flashMessage);
 		model.addAttribute("flashClass", flashClass);
@@ -127,7 +127,7 @@ public class AccountsController {
 	public String debitAccount(@ModelAttribute Account account, Model model,
 			RedirectAttributes attributes) {
 		if (this.accountClient.debit(account.getClientId(),
-				account.getAmmount())) {
+				account.getAmount())) {
 			attributes.addFlashAttribute("flashMessage",
 					"Account was successfully debited.");
 			attributes.addFlashAttribute("flashClass", "alert-success");

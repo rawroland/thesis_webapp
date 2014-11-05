@@ -1,10 +1,5 @@
 package me.rolandawemo.clients.interfaces;
 
-import java.util.ArrayList;
-
-import me.rolandawemo.models.Client;
-
-
 public interface IAccountManagement {
 	
 	public boolean add(int clientId);

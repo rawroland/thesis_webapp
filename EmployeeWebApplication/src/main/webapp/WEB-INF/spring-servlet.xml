@@ -35,5 +35,8 @@
 	<bean name="employeeClient" class="me.rolandawemo.clients.implementations.EmployeeManagementClient"/>
 	<bean name="clientClient" class="me.rolandawemo.clients.implementations.ClientManagementClient"/>
 	<bean name="accountClient" class="me.rolandawemo.clients.implementations.AccountManagementClient"/>
+	<bean name="productClient" class="me.rolandawemo.clients.implementations.ProductManagementClient"/>
+	<bean name="transactionClient" class="me.rolandawemo.clients.implementations.TransactionManagementClient"/>
+	<bean name="reportingClient" class="me.rolandawemo.clients.implementations.ReportingManagementClient"/>
 	
 </beans>
